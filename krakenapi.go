@@ -432,7 +432,7 @@ func (api *KrakenApi) doRequest(reqURL string, values url.Values, headers map[st
 		return nil, fmt.Errorf("Could not execute request #4! (%s)", err.Error())
 	}
 	if mimeType != "application/json" {
-		return nil, fmt.Errorf("Could not execute request #5! (%s)", fmt.Sprintf("Response Content-Type is '%s', but should be 'application/json'.", mimeType))
+		return nil, fmt.Errorf("Could not execute request #5! (%s)", fmt.Sprintf("Response Content-Type is '%s', but should be 'application/json'. Content: %s", mimeType, string(body)))
 	}
 
 	// Parse request
