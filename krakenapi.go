@@ -353,6 +353,23 @@ func (api *KrakenApi) AddOrder(pair string, direction string, orderType string, 
 	return resp.(*AddOrderResponse), nil
 }
 
+func (api *KrakenApi) Withdrawal(asset string, wallet string, amount string, twoFactor string) (*WithdrawalResponse, error) {
+	params := url.Values{
+		"asset":  {asset},
+		"key":    {wallet},
+		"amount": {amount},
+		"otp":    {twoFactor},
+	}
+
+	resp, err := api.queryPrivate("Withdrawal", params, &WithdrawalResponse{})
+
+	if err != nil {
+		return nil, err
+	}
+
+	return resp.(*WithdrawalResponse), nil
+}
+
 // Query sends a query to Kraken api for given method and parameters
 func (api *KrakenApi) Query(method string, data map[string]string) (interface{}, error) {
 	values := url.Values{}

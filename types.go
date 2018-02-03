@@ -470,3 +470,7 @@ type CancelOrderResponse struct {
 }
 
 type QueryOrdersResponse map[string]Order
+
+type WithdrawalResponse struct {
+	ReferenceId string `json:"refid"`
+}
