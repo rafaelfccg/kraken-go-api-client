@@ -353,15 +353,14 @@ func (api *KrakenApi) AddOrder(pair string, direction string, orderType string, 
 	return resp.(*AddOrderResponse), nil
 }
 
-func (api *KrakenApi) Withdrawal(asset string, wallet string, amount string, twoFactor string) (*WithdrawalResponse, error) {
+func (api *KrakenApi) Withdrawal(asset string, wallet string, amount string) (*WithdrawalResponse, error) {
 	params := url.Values{
 		"asset":  {asset},
 		"key":    {wallet},
 		"amount": {amount},
-		"otp":    {twoFactor},
 	}
 
-	resp, err := api.queryPrivate("Withdrawal", params, &WithdrawalResponse{})
+	resp, err := api.queryPrivate("Withdraw", params, &WithdrawalResponse{})
 
 	if err != nil {
 		return nil, err
@@ -455,8 +454,8 @@ func (api *KrakenApi) doRequest(reqURL string, values url.Values, headers map[st
 	// Parse request
 	var jsonData KrakenResponse
 
-	// Set the KrakenResponse.Result to typ so `json.Unmarshal` will
-	// unmarshal it into given type, instead of `interface{}`.
+	// Set the KrakenResoinse.Result to typ so `json.Unmarshal` will
+	// unmarshal it into given typ instead of `interface{}`.
 	if typ != nil {
 		jsonData.Result = typ
 	}
