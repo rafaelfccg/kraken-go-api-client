@@ -63,6 +63,11 @@ const (
 	XZECXXBT = "XZECXXBT"
 	XZECZEUR = "XZECZEUR"
 	XZECZUSD = "XZECZUSD"
+	XTZUSD   = "XTZUSD"
+	XTZEUR   = "XTZEUR"
+	XTZXBT   = "XTZXBT"
+	XTZETH   = "XTZETH"
+	XTZCAD   = "XTZCAD"
 )
 
 const (
@@ -144,6 +149,11 @@ type AssetPairsResponse struct {
 	XZECXXBT AssetPairInfo
 	XZECZEUR AssetPairInfo
 	XZECZUSD AssetPairInfo
+	XTZUSD   AssetPairInfo
+	XTZEUR   AssetPairInfo
+	XTZXBT   AssetPairInfo
+	XTZETH   AssetPairInfo
+	XTZCAD   AssetPairInfo
 }
 
 // AssetPairInfo represents asset pair information
@@ -188,6 +198,7 @@ type AssetsResponse struct {
 	DASH AssetInfo
 	EOS  AssetInfo
 	GNO  AssetInfo
+	XTZ  AssetInfo
 	KFEE AssetInfo
 	USDT AssetInfo
 	XDAO AssetInfo
@@ -253,6 +264,7 @@ type BalanceResponse struct {
 	ZJPY float64 `json:"ZJPY,string"`
 	ZKRW float64 `json:"ZKRW,string"`
 	ZUSD float64 `json:"ZUSD,string"`
+	XTZ  float64 `json:"XTZ,string"`
 }
 
 // TickerResponse includes the requested ticker pairs
@@ -313,6 +325,11 @@ type TickerResponse struct {
 	XZECXXBT PairTickerInfo
 	XZECZEUR PairTickerInfo
 	XZECZUSD PairTickerInfo
+	XTZUSD   PairTickerInfo
+	XTZEUR   PairTickerInfo
+	XTZXBT   PairTickerInfo
+	XTZETH   PairTickerInfo
+	XTZCAD   PairTickerInfo
 }
 
 // GetPairTickerInfo is a helper method that returns given `pair`'s `PairTickerInfo`
