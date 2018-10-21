@@ -82,6 +82,7 @@ const (
 	MinimumXLM  = 300.0
 	MinimumZEC  = 0.02
 	MinimumUSDT = 5.0
+	MinimumXTZ  = 1.0
 )
 
 // KrakenApi represents a Kraken API Client connection
