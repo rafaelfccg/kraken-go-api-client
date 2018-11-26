@@ -68,6 +68,7 @@ const (
 	MinimumREP  = 0.3
 	MinimumXBT  = 0.002
 	MinimumBCH  = 0.002
+	MinimumBSV  = 0.002
 	MinimumDASH = 0.03
 	MinimumDOGE = 3000.0
 	MinimumEOS  = 3.0
